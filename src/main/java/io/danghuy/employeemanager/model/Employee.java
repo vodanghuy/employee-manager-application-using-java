@@ -19,7 +19,7 @@ public class Employee implements Serializable {
     // Sinh gia tri tu dong cho khoa chinh (IDENTITY == AUTO_INCREMENT)
     @Column(nullable = false, updatable = false)
     // Rang buoc
-    private int id;
+    private Long id;
     private String name;
     private String email;
     private String jobTitle;
@@ -32,7 +32,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(int id, String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
+    public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -42,7 +42,7 @@ public class Employee implements Serializable {
         this.employeeCode = employeeCode;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -70,7 +70,7 @@ public class Employee implements Serializable {
         return employeeCode;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
