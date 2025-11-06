@@ -12,6 +12,7 @@ import java.io.Serializable;
         - Tự động tạo bảng (nếu ddl-auto là create hoặc update)
         - Tự động ánh xạ các cột tương ứng với các thuộc tính (fields)
  */
+@Table(name = "employees")
 public class Employee implements Serializable {
     // Serializable giúp đối tượng chuyển doi sang dang byte stream (framework nhu Spring, JPA yeu cau dieu nay)
     @Id
