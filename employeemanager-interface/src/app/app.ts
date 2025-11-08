@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class App implements OnInit{
   public employees: Employee[] = [];
+  public chosenEmployee: Employee | null = null;
 
   constructor(public employeeService: EmployeeService) {}
 
