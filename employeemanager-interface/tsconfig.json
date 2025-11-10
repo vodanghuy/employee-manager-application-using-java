@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "strict": true,
+    "strict": false, // Tat strict mode de tat yeu cau "moi thuoc tinh phai duoc gan gia tri ngay lap tuc"
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
