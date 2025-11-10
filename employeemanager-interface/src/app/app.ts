@@ -12,7 +12,8 @@ import { NgForm } from '@angular/forms';
 })
 export class App implements OnInit{
   public employees: Employee[] = [];
-  public chosenEmployee: Employee | null = null;
+  public editEmployee: Employee | null = null;
+  public deleteEmployee: Employee | null = null;
 
   constructor(public employeeService: EmployeeService) {}
 
@@ -47,6 +48,18 @@ export class App implements OnInit{
     )
   }
 
+  public onUpdateEmployee(employee: Employee): void{
+    this.employeeService.updateEmployee(employee).subscribe(
+      (response: Employee) => {
+        console.log(response);
+        this.getEmployees();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
   public onOpenModal(employee: Employee | null, mode: string): void{
       const container = document.getElementById('main-container');
       if (!container) {
@@ -61,9 +74,11 @@ export class App implements OnInit{
         button.setAttribute('data-target', '#addEmployeeModal');
       }
       if(mode === 'edit'){
+        this.editEmployee = employee;
         button.setAttribute('data-target', '#editEmployeeModal');
       }
       if(mode === 'delete'){
+        this.deleteEmployee = employee;
         button.setAttribute('data-target', '#deleteEmployeeModal');
       }
       container.appendChild(button);
